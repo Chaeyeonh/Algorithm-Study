@@ -1,25 +1,42 @@
-
+#분기 한정법: 9가 나온다면 그 뒤의 for문은 더 이상 돌 필요 없으므로 break
 def solution(number, k):
     answer = ''
     max_index = -1
-    k = len(number)-k
-    while k > 0:
+    cnt = len(number)-k
+    while cnt > 0:
         max = -1
-        for i in range (max_index+1,len(number) - k + 1):
+        for i in range (max_index+1,len(number) - cnt + 1):
             if max < int(number[i]):
                 max = int(number[i])
                 max_index = i
-                if max == '9':
-                 break
-        k -= 1
+                if max == 9:
+                    break
+                    
+        cnt -= 1
         answer += number[max_index]
-
-        print('max_index:',max_index)
-
-        print('k',k)
-        print('answer:',answer)
 
     return answer
 
-print(solution('1231234',3))
-#테스트 케이스 10번 시간 초과 오류. 시간복잡도 O(N^2)라서...
+
+#stack 풀이
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+def solution(number, k):
+    stack = [number[0]]
+    for num in number[1:]:
+        while len(stack) > 0 and stack[-1] < num and k > 0:
+            k -= 1
+            stack.pop()
+        stack.append(num)
+    if k != 0:
+        stack = stack[:-k]
+    return ''.join(stack)
