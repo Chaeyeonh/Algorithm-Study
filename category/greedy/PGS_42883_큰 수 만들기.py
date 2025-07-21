@@ -20,16 +20,7 @@ def solution(number, k):
 
 #stack 풀이
 
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+
 def solution(number, k):
     stack = [number[0]]
     for num in number[1:]:
