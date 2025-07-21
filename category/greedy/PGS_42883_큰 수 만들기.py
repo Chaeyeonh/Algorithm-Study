@@ -19,6 +19,11 @@ def solution(number, k):
 
 
 #stack 풀이
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 78399d1c50776bdf172308e71310981f5eecccad
 def solution(number, k):
     stack = [number[0]]
     for num in number[1:]:
