@@ -24,7 +24,5 @@ function solution(n, computers){
             answer ++;
         }
     }
-
     return answer;
-
 }
