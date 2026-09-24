@@ -5,4 +5,4 @@ def solution(arr):
             answer.append(i)
     return answer
 
-print(solution("133303")) # [1,3,0,3]
+print(solution("133303")) # ['1','3','0','3']
